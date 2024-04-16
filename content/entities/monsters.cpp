@@ -1,5 +1,2 @@
 #include "monsters.h"
-
-namespace Monsters {
-
-}
+namespace Monsters{}
