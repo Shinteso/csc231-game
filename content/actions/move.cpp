@@ -25,10 +25,9 @@ Result Move::perform(Engine& engine , std::shared_ptr<Entity> entity) {
     if (tile.is_wall() || tile.has_entity()) {
         return failure();
    }
-    if (tile.has_door()){
-        tile.door->open();
+    if (tile.has_door() && !tile.door->is_open()){
+        return alternative(OpenDoor(*tile.door));
     }
-
     //must be an empty tile or not a wall
     entity->move_to(position);
     return success();
