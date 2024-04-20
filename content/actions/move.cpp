@@ -10,13 +10,8 @@
 
 #include "rest.h"
 
-
-
-
 Move::Move(Vec direction)
 : direction({direction}){}
-
-
 
 Result Move::perform(Engine& engine , std::shared_ptr<Entity> entity) {
 
@@ -24,7 +19,7 @@ Result Move::perform(Engine& engine , std::shared_ptr<Entity> entity) {
     Vec position = entity->get_position() + direction;
     Tile& tile = engine.dungeon.get_tile(position);
     //check if wall
-    if (tile.is_wall() || tile.has_entity()) {
+    if (tile.is_wall()) {
         return failure();
     }
     else if (tile.has_door() && !tile.door->is_open()){
