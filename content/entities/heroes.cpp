@@ -7,15 +7,20 @@
 #include "rest.h"
 
 #include "move.h"
-#include "opendoor.h"
+
 #include "closedoor.h"
+
 #include "sword_red_gem.h"
 
+#include "spear.h"
+#include "knife.h"
 namespace Heroes {
     void make_dragon(std::shared_ptr<Entity>& hero) {
         hero->set_sprite("dragon");
         hero->set_max_health(100);
         hero->add_to_inventory(std::make_shared<Sword_Red_Gem>(18));
+        hero->add_to_inventory(std::make_shared<Spear>(12));
+        hero->add_to_inventory(std::make_shared<Knife>(5));
         hero->behavior = behavior;
     }
     std::unique_ptr<Action> behavior(Engine& engine, Entity& entity) {
