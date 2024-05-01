@@ -3,9 +3,9 @@
 #include "sprite.h"
 #include "event.h"
 
-class Thrust : public Event {
+class Recoil : public Event {
 public:
-    Thrust(Sprite& sprite, Vec direction);
+    Recoil(Sprite& sprite, Vec direction);
 
     // execute : sprite.shift += (dx, dy)
     void execute(Engine& engine) override;

@@ -4,6 +4,7 @@
 #include "entities.h"
 #include "entity.h"
 #include "graphics.h"
+#include <algorithm>
 
 Camera::Camera(Graphics& graphics, int tile_size, int zoom)
     :graphics{graphics}, tile_size{tile_size}, zoom{zoom}, location{0, 0},

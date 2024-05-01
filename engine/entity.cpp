@@ -5,6 +5,7 @@
 #include "action.h"
 #include "engine.h"
 #include "item.h"
+#include <algorithm>
 
 Entity::Entity(Engine& engine, Vec position, Team team)
     : engine{engine},
