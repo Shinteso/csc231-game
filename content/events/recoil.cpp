@@ -29,7 +29,7 @@ Thrust::Thrust(Sprite& sprite , Vec direction)
 
 void Thrust::execute(Engine& ) {
     //shift in pixels (16 per tile)
-    sprite.shift += direction* 1 * delta;
+    sprite.shift += direction* -1 * delta;
 }
 
 void Thrust::when_done(Engine&) {
