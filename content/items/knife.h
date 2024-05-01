@@ -1,7 +1,7 @@
 #pragma once
 
 #include "item.h"
-
+#include "entity.h"
 class Knife : public Item {
 public:
     explicit Knife(int damage);

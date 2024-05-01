@@ -1,5 +1,6 @@
 #pragma once
 #include "item.h"
+#include "entity.h"
 
 class Sword_Red_Gem : public Item {
 public:

@@ -1,6 +1,7 @@
 #include "closedoor.h"
 #include "entity.h"
 #include "updatefov.h"
+#include "sound.h"
 
 
 Result CloseDoor::perform(Engine& engine , std::shared_ptr<Entity> entity) {
@@ -16,6 +17,7 @@ Result CloseDoor::perform(Engine& engine , std::shared_ptr<Entity> entity) {
     }
     if (closed_any_doors){
         engine.events.create_event<UpdateFOV>();
+        engine.events.create_event<Sound>("door-close");
         return success();
     }
     else {

@@ -23,6 +23,7 @@ Engine::Engine(const Settings& settings)
     graphics.load_sprite_sheet(settings.monsters);
     graphics.load_sprite_sheet(settings.items);
     graphics.load_sprite_sheet(settings.effects);
+    graphics.load_sprite_sheet(settings.firearms);
     
     // create dungeon layout
     Builder builder(settings.room_placement_attempts);

@@ -1,4 +1,4 @@
-#include "thrust.h"
+#include "recoil.h"
 
 constexpr int duration = 4; //number of frames
 constexpr int delta = 3;
@@ -29,7 +29,7 @@ Thrust::Thrust(Sprite& sprite , Vec direction)
 
 void Thrust::execute(Engine& ) {
     //shift in pixels (16 per tile)
-    sprite.shift += direction * delta;
+    sprite.shift += direction* 1 * delta;
 }
 
 void Thrust::when_done(Engine&) {

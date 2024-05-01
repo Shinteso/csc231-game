@@ -1,6 +1,7 @@
 #pragma once
 
 #include "item.h"
+#include "entity.h"
 
 class Spear : public Item {
 public:
