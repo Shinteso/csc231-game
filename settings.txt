@@ -9,6 +9,7 @@ monsters assets/monsters.txt
 items assets/items.txt
 effects assets/effects.txt
 sounds assets/sounds.txt
+firearms assets/firearms.txt
 map_width 39
 map_height 21
 room_placement_attempts 200

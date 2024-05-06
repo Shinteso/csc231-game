@@ -10,18 +10,18 @@ Recoil::Recoil(Sprite& sprite , Vec direction)
 
     if (direction == Vec{1, 0}) { // right
         sprite.shift.y += sprite.size.y/2;
-
+        sprite.angle = 90;
     }
     else if (direction == Vec{-1, 0}) { // left
         sprite.shift.y += sprite.size.y/2;
-
+        sprite.angle = -90;
     }
     else if (direction == Vec{0, 1}) { // up
-
+        sprite.angle = 0;
         this->direction = -1 * direction;
     }
     else { // down
-
+        sprite.angle = 180;
         sprite.shift.y += sprite.size.y;
         this->direction = -1 * direction;
     }

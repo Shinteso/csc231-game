@@ -11,7 +11,7 @@
 
 Engine::Engine(const Settings& settings)
     :graphics{settings.title, settings.screen_width, settings.screen_height},
-     camera{graphics, settings.tile_size, settings.zoom}, running{false} {
+     camera{graphics, settings.tile_size, settings.zoom}, settings{settings}, running{false} {
 
     // load sounds
     audio.load_sounds(settings.sounds);

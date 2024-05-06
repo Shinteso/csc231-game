@@ -32,6 +32,7 @@ public:
     std::string items;
     std::string effects;
     std::string sounds;
+    std::string firearms;
 
 private:
     void load();

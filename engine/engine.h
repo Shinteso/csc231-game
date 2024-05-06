@@ -31,8 +31,8 @@ public:
     Graphics graphics;  // loads sprites and animated sprites
     Camera camera;      // draws content on screen given camera position
     Dungeon dungeon;    // contains the tiles of the game
-    Events events;      // event system manage
-
+    Events events;// event system manage
+    Settings settings;
     // Current hero in the game
     std::shared_ptr<Entity> hero;
     

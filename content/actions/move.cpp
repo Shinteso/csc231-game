@@ -1,16 +1,11 @@
 #include "move.h"
-
 #include "tile.h"
-
 #include "entity.h"
-
 #include "engine.h"
-
 #include "opendoor.h"
-
 #include "rest.h"
-
 #include "attack.h"
+#include "item.h"
 
 Move::Move(Vec direction)
 : direction({direction}){}
@@ -35,7 +30,11 @@ Result Move::perform(Engine& engine , std::shared_ptr<Entity> entity) {
             return alternative(Rest());
         }
     }
-        //must be an empty tile or not a wall
-        entity->move_to(position);
-        return success();
+    //must be an empty tile or not a wall
+    entity->move_to(position);
+
+    if (tile.has_item()) {
+        tile.item->interact(engine, *entity);
+    }
+    return success();
 }

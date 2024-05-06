@@ -3,9 +3,9 @@
 #include "item.h"
 #include "entity.h"
 
-class Spear : public Item {
+class Launcher : public Item {
 public:
-    explicit Spear(int damage);
+    explicit Launcher(int damage);
     void use(Engine& engine, Entity& attacker, Entity& defender) override;
 
 private:

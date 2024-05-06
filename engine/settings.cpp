@@ -31,6 +31,7 @@ void Settings::load() {
     load("items", items);
     load("effects", effects);
     load("sounds", sounds);
+    load("firearms", firearms);
     load("map_width", map_width);
     load("map_height", map_height);
     load("room_placement_attempts", room_placement_attempts);
