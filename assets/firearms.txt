@@ -1,0 +1,9 @@
+firearms.png
+
+shotgun 48 144 16 32
+
+launcher 48 176 16 32
+
+saber_red 64 0 16 32
+
+saber_blue 80 0 16 32
