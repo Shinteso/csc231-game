@@ -12,14 +12,22 @@ NextFloor::NextFloor(int level)
 
 void NextFloor::interact(Engine& engine , Entity& entity) {
     if(&entity == engine.hero.get()) {
+        engine.entities.add(engine.hero);
         Builder builder {engine.settings.room_placement_attempts};
         auto [layout, rooms] = builder.generate(engine.settings.map_width, engine.settings.map_height);
         Decorator decorator {engine.graphics, layout, rooms};
         engine.dungeon = decorator.create_dungeon();
-        entity.move_to(engine.dungeon.random_open_room_tile());
-        Vec pos = entity.get_position();
-        Tile& t = engine.dungeon.get_tile(pos);
-        t.entity = &entity;
+        for (auto& e : engine.entities) {
+            if (e != engine.hero) {
+                engine.remove_entity(*e);
+            }
+        }
+        Vec new_position = engine.dungeon.random_open_room_tile();
+        entity.move_to(new_position);
+        Tile& tile = engine.dungeon.get_tile(new_position);
+        tile.entity = engine.hero.get();
+
+
         for (int i = 0; i < level+1; ++i) {
             for (i = 0; i < 2; ++i) {
                 std::shared_ptr<Entity> monster0 = engine.create_monster();
