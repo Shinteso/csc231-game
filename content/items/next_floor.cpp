@@ -17,6 +17,7 @@ void NextFloor::interact(Engine& engine , Entity& entity) {
         auto [layout, rooms] = builder.generate(engine.settings.map_width, engine.settings.map_height);
         Decorator decorator {engine.graphics, layout, rooms};
         engine.dungeon = decorator.create_dungeon();
+
         for (auto& e : engine.entities) {
             if (e != engine.hero) {
                 engine.remove_entity(*e);
@@ -38,5 +39,11 @@ void NextFloor::interact(Engine& engine , Entity& entity) {
                 Monsters::make_zombie(monster2);
             }
         }
+
+        auto staircase = std::make_shared<NextFloor>(1);
+        staircase->sprite = engine.graphics.get_sprite(staircase->name);
+        Vec position = engine.dungeon.random_open_room_tile();
+        Tile& tile1 = engine.dungeon.get_tile(position);
+        tile1.item = staircase;
     }
 }
