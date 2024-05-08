@@ -24,13 +24,12 @@ int main() {
             std::shared_ptr<Entity> monster = engine.create_monster();
             Monsters::make_zombie(monster);
         }
-        for (int i =0; i < 10; ++i) {
+
             auto staircase = std::make_shared<NextFloor>(1);
             staircase->sprite = engine.graphics.get_sprite(staircase->name);
             Vec position = engine.dungeon.random_open_room_tile();
             Tile& tile = engine.dungeon.get_tile(position);
             tile.item = staircase;
-        }
 
         engine.run();
     }
